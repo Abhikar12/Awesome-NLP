@@ -7,9 +7,13 @@ Assignment Title : Text pre-processing using NLP operation : perform Tokenizatio
 
 """
 
-
+# Import the spaCy library
 import spacy
+
+# Load the English language model "en_core_web_sm" provided by spaCy
 nlp = spacy.load("en_core_web_sm")
+
+# Define the text you want to analyze
 about_text = (
     
     "Your smile makes me smile"
@@ -26,7 +30,11 @@ about_text = (
     "I don't know what to do, about this lovely little crush"
     
 )
+
+# Process the text using the spaCy pipeline
 about_doc = nlp(about_text)
+
+# Iterate through each token in the processed document and print the token and its index
 
 for token in about_doc:
     print (token, token.idx)
