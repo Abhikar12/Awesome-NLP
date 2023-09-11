@@ -7,12 +7,16 @@ Assignment Title : Text pre-processing using NLP operation : perform Tokenizatio
 
 """
 
-#import library
-
+# Import the spaCy library
 import spacy
 
+# Import Counter class from the collections module
 from collections import Counter
+
+# Load the English language model from spaCy
 nlp = spacy.load("en_core_web_sm")
+
+# Define the complete text you want to analyze
 complete_text = (
     
     "Your smile makes me smile,"
@@ -28,7 +32,11 @@ complete_text = (
     "I have a crush, a little teenage crush"
     "I don't know what to do, about this lovely little crush"
 )
+
+# Process the complete text using spaCy's language model
 complete_doc = nlp(complete_text)
+
+# Create a list of words from the processed document, excluding stop words and punctuation
 
 words = [
     token.text
@@ -36,14 +44,15 @@ words = [
     if not token.is_stop and not token.is_punct
 ]
 
+# Print the most common 5 words and their frequencies
 print(Counter(words).most_common(5))
     
 # OUTPUT -
 
-    """
+"""
     [('smile', 2), ('makes', 2), ('laugh', 2), ('eyes', 2), ('grew', 2)]
     
-    """
+"""
  
  
  
