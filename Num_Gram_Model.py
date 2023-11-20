@@ -54,6 +54,7 @@ for i in file.readlines():
         print()
 
 # OUTPUT -
+
 """
 ('Your',)
 ('smile',)
